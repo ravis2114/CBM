@@ -37,10 +37,6 @@ class DataDriver:
                                     f = f.readlines()[0].split(';')
                                 data_temp = pd.read_csv(path, delimiter=';',
                                                         index_col='signaldate', usecols=list(range(len(f))))
-                    print(month)
-                    print(data_temp)
-                    data.to_csv('df1.csv')
-                    data_temp.to_csv('df2.csv')
                     data = pd.concat([data, data_temp], axis=0)
                 else:
                     paths = [p for p in pathlib.Path(
